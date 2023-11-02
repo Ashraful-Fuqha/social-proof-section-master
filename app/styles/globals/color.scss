@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+// primary
+$very_dark_magenta: hsl(300, 43%, 22%);
+$soft_pink: hsl(333, 80%, 67%);
+
+// neutral
+$dark_grayish_magenta: hsl(303, 10%, 53%);
+$Light_Grayish_Magenta: hsl(300, 24%, 96%);
+$White: hsl(0, 0%, 100%);
+
+
+.txt-section{
+    h1{
+        color: $very_dark_magenta;
+    }
+    p{  
+        color: $dark_grayish_magenta;
+    }
+}
+
+.rating-section{
+    article{
+        background-color: $Light_Grayish_Magenta;
+    }
+    h2{
+        color: $very_dark_magenta;
+    }
+}
+
+.testimonial-section{
+    article{
+        background-color: $very_dark_magenta;
+    }
+    h2{
+        color: $Light_Grayish_Magenta;
+    }
+    h3{
+        color: $soft_pink;
+    }
+    p{
+        color: $Light_Grayish_Magenta;
+    }
+}

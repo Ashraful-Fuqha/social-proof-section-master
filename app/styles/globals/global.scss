@@ -1,0 +1,124 @@
+@use 'variables' as *;
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 5rem 1.5rem;
+    background: url("../images/bg-pattern-top-mobile.svg") no-repeat left top, url("../images/bg-pattern-bottom-mobile.svg") no-repeat right bottom;
+
+    @include breakpoint-up('md'){
+        background: url("../images/bg-pattern-top-desktop.svg") no-repeat left top, url("../images/bg-pattern-bottom-desktop.svg") no-repeat right bottom;
+    }
+
+    footer{
+        position: absolute;
+        bottom: 0;
+    }
+
+    .txt-section{
+        @include breakpoint-up('sm'){
+            display: grid;
+            place-items: center;
+            p{
+                max-width: calc(444.133/15)*1rem;
+            }
+        }
+        @include breakpoint-up('lg'){
+            place-items: start;
+            max-width: 29rem;
+            text-align: left;
+            
+        }
+    }
+
+    .rating-section{
+        @include breakpoint-up('sm'){
+            display: grid;
+            place-items: center;
+            article{
+                display: flex;
+                flex-direction: row;
+                width: calc(450/15)*1rem;
+                gap: 2rem;
+                .stars{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        @include breakpoint-up('lg'){
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            article{
+                margin-bottom: -0.8rem;
+            }
+            article:nth-child(1){
+                justify-self: self-start;
+            }
+            article:nth-child(2){
+                justify-self: center;
+            }
+            article:nth-child(3){
+                justify-self: self-end;
+            }
+        }
+    }
+    .testimonial-section{
+        @include breakpoint-down('sm'){
+            display: grid;
+            place-items: center;
+        }
+        @include breakpoint-up('sm'){
+            display: grid;
+            place-items: center;
+        }
+
+        @include breakpoint-up('lg'){
+            display: flex;
+            height: calc(290/15)*1rem;
+            gap: 1.5rem;
+
+            article:nth-child(1){
+                align-self: flex-start;
+            }
+            article:nth-child(2){
+                align-self: center;
+            }
+            article:nth-child(3){
+                align-self: flex-end;
+            }
+        }
+    }
+
+    main{
+        @include breakpoint-up('lg'){
+            padding-top: 2rem;
+            display: grid;
+            grid-template-areas: 
+                    "tx . rt"
+                    ". . ."
+                    "tt tt tt";
+            row-gap: 3rem;
+            
+            .txt-section{
+                grid-area: tx;
+            }
+            .rating-section{
+                grid-area: rt;
+                width: calc(600/15)*1rem;
+            }
+            .testimonial-section{
+                grid-area: tt;
+            }
+        }
+    }
+    
+
+}
